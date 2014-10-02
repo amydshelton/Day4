@@ -1,22 +1,27 @@
-ten_things = "Apples Oranges Crows Telephone Light Sugar"
+numbers = []
+strings = []
+names = ["John", "Eric", "Jessica"]
 
-print "Wait there are not 10 things in that list. Let's fix that."
+numbers.extend([1,2,3])
 
-stuff = ten_things.split(' ')
-more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana", "Girl", "Boy"]
+strings.append("hello")
+strings.append("world")
 
-while len(stuff) != 10:
-    next_one = more_stuff.pop()
-    print "Adding: ", next_one
-    stuff.append(next_one)
-    print "There are %d items now." % len(stuff)
+# write your code here
+second_name = names[1]
 
-print "There we go: ", stuff
 
-print "Let's do some things with stuff."
+# this code should write out the filled arrays and the second name in the names list (Eric).
+print(numbers)
+print(strings)
+print("The second name on the names list is %s" % second_name)
 
-print stuff[1]
-print stuff [-1]
-print stuff.pop()
-print ' '.join(stuff)
-print '#'.join(stuff[3:5])
+print names
+
+sortednames = sorted(names)
+
+print sortednames
+#names.sort()
+# #return names
+# sortednames = names
+# print sortednames
