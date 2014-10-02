@@ -96,24 +96,24 @@ class TestListOperations(unittest.TestCase):
         self.assertEqual(self.notes, ['Do', 'Re', 42, 37, 'Ti', 'Do'])
         self.assertEqual(self.multiples, [0, 3, 42, 37, 24, 27])
 
-    # def test_1_M_delete_third_and_seventh(self):
-    #     delete_third_and_seventh(self.months)
-    #     delete_third_and_seventh(self.notes)
-    #     delete_third_and_seventh(self.multiples)
+    def test_1_M_delete_third_and_seventh(self):
+        delete_third_and_seventh(self.months)
+        delete_third_and_seventh(self.notes)
+        delete_third_and_seventh(self.multiples)
 
-    #     self.assertEqual(self.months, ['Jan', 'Feb', 'Apr', 'May', 'Jun', 'Aug',
-    #                                    'Sep', 'Oct', 'Nov', 'Dec'])
-    #     self.assertEqual(self.notes, ['Do', 'Re', 'Fa', 'So', 'La', 'Do'])
-    #     self.assertEqual(self.multiples, [0, 3, 9, 12, 15, 21, 24, 27])
+        self.assertEqual(self.months, ['Jan', 'Feb', 'Apr', 'May', 'Jun', 'Aug',
+                                       'Sep', 'Oct', 'Nov', 'Dec'])
+        self.assertEqual(self.notes, ['Do', 'Re', 'Fa', 'So', 'La', 'Do'])
+        self.assertEqual(self.multiples, [0, 3, 9, 12, 15, 21, 24, 27])
 
-    # def test_1_N_delete_middle(self):
-    #     delete_middle(self.months)
-    #     delete_middle(self.notes)
-    #     delete_middle(self.multiples)
+    def test_1_N_delete_middle(self):
+        delete_middle(self.months)
+        delete_middle(self.notes)
+        delete_middle(self.multiples)
 
-    #     self.assertEqual(self.months, ['Jan', 'Feb', 'Nov', 'Dec'])
-    #     self.assertEqual(self.notes, ['Do', 'Re', 'Ti', 'Do'])
-    #     self.assertEqual(self.multiples, [0, 3, 24, 27])
+        self.assertEqual(self.months, ['Jan', 'Feb', 'Nov', 'Dec'])
+        self.assertEqual(self.notes, ['Do', 'Re', 'Ti', 'Do'])
+        self.assertEqual(self.multiples, [0, 3, 24, 27])
 
     # ### Tests for Part 2 ###
 
