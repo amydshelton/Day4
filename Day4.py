@@ -1,20 +1,22 @@
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
 
-def whileLoop(max):
-    i = 0 
-    numbers = []
-    while i < max:
-        print "At the top i is %d" % i
-        numbers.append(i)
+print "Wait there are not 10 things in that list. Let's fix that."
 
-        i = i + 1
-        print "Numbers now:", numbers
-        print "At the bottom i is %d" % i
+stuff = ten_things.split(' ')
+more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana", "Girl", "Boy"]
 
-        
-    print "The numbers: "
+while len(stuff) != 10:
+    next_one = more_stuff.pop()
+    print "Adding: ", next_one
+    stuff.append(next_one)
+    print "There are %d items now." % len(stuff)
 
-    for num in numbers:
-        print num
-    # return "hello"
+print "There we go: ", stuff
 
-whileLoop(6)
+print "Let's do some things with stuff."
+
+print stuff[1]
+print stuff [-1]
+print stuff.pop()
+print ' '.join(stuff)
+print '#'.join(stuff[3:5])
