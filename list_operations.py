@@ -184,19 +184,19 @@ def custom_reverse(input_list):
     lenList = custom_len(input_list)
     halfList = lenList/2
     beginning = 0
-    end = lenList
+    end = lenList-1
     for i in range(halfList):
-        for b in range(halfList):
-            temp = input_list[beginning]
-            input_list[beginning] = input_list[end]
-            input_list[end] = temp
+
+        temp = input_list[beginning]
+        input_list[beginning] = input_list[end]
+        input_list[end] = temp
         beginning +=1
         end -= 1
 
-       # temp = input_list[6]
-        #input_list[1] = input_list[6]
-        #input_list[6] = temp
+
     return input_list
+
+#custom_reverse(["Jan","Feb","March","April"])
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
