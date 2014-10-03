@@ -158,19 +158,45 @@ def custom_remove(input_list, value):
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
-    pass
+    a = input_list[-1]
+    del input_list[-1]
+    return a
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    pass
+    lenList = custom_len(input_list)
+    for i in range(lenList):
+        if input_list[i] == value:
+            return i
+        
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
-    pass
+    count = 0
+    lenList = custom_len(input_list)
+    for i in range(lenList):
+        if input_list[i] == value:
+            count +=1
+    return count
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    pass
+    lenList = custom_len(input_list)
+    halfList = lenList/2
+    beginning = 0
+    end = lenList
+    for i in range(halfList):
+        for b in range(halfList):
+            temp = input_list[beginning]
+            input_list[beginning] = input_list[end]
+            input_list[end] = temp
+        beginning +=1
+        end -= 1
+
+       # temp = input_list[6]
+        #input_list[1] = input_list[6]
+        #input_list[6] = temp
+    return input_list
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
