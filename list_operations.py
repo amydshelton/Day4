@@ -134,17 +134,27 @@ def custom_append(input_list, value):
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    pass
+    lenValues = custom_len(values)
+    for i in range(lenValues):
+        valueA = values[i]
+        custom_append(input_list,valueA)
+    return input_list
 
 def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
-    pass
+    input_list[index:index] = [value]
+    return input_list
 
 def custom_remove(input_list, value):
     """custom_remove(input_list, value) imitates input_list.remove(value)"""
-    pass
+    lenList = custom_len(input_list)
+    for i in range(lenList):
+        if input_list[i] == value:
+            del input_list[i]
+            break
+    return input_list
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
