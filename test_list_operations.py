@@ -200,30 +200,30 @@ class TestListOperations(unittest.TestCase):
                                       'Do'])
         self.assertEqual(self.multiples, [27, 24, 21, 18, 15, 12, 9, 6, 3, 0])
 
-    # def test_2_J_custom_contains(self):
-    #     self.assertTrue(custom_contains(self.months, 'Jul'))
-    #     self.assertTrue(custom_contains(self.notes, 'Do'))
-    #     self.assertTrue(custom_contains(self.multiples, 27))
+    def test_2_J_custom_contains(self):
+        self.assertTrue(custom_contains(self.months, 'Jul'))
+        self.assertTrue(custom_contains(self.notes, 'Do'))
+        self.assertTrue(custom_contains(self.multiples, 27))
 
-    #     self.assertFalse(custom_contains(self.months, 'Hex'))
-    #     self.assertFalse(custom_contains(self.notes, 'Go'))
-    #     self.assertFalse(custom_contains(self.multiples, 30))
+        self.assertFalse(custom_contains(self.months, 'Hex'))
+        self.assertFalse(custom_contains(self.notes, 'Go'))
+        self.assertFalse(custom_contains(self.multiples, 30))
 
-    # def test_2_K_custom_equality(self):
-    #     self.assertTrue(custom_equality(self.months, ['Jan', 'Feb', 'Mar', 'Apr',
-    #                                                   'May', 'Jun', 'Jul', 'Aug',
-    #                                                   'Sep', 'Oct', 'Nov', 'Dec']))
-    #     self.assertTrue(custom_equality(self.notes, ['Do', 'Re', 'Mi', 'Fa', 'So',
-    #                                                  'La', 'Ti', 'Do']))
-    #     self.assertTrue(custom_equality(self.multiples, [0, 3, 6, 9, 12, 15, 18,
-    #                                                      21, 24, 27]))
+    def test_2_K_custom_equality(self):
+        self.assertTrue(custom_equality(self.months, ['Jan', 'Feb', 'Mar', 'Apr',
+                                                      'May', 'Jun', 'Jul', 'Aug',
+                                                      'Sep', 'Oct', 'Nov', 'Dec']))
+        self.assertTrue(custom_equality(self.notes, ['Do', 'Re', 'Mi', 'Fa', 'So',
+                                                     'La', 'Ti', 'Do']))
+        self.assertTrue(custom_equality(self.multiples, [0, 3, 6, 9, 12, 15, 18,
+                                                         21, 24, 27]))
 
-    #     self.assertFalse(custom_equality(self.months, ['Jan', 'Feb', 'Mar', 'Apr',
-    #                                                   'May', 'Jun', 'Aug', 'Sep',
-    #                                                    'Oct', 'Nov', 'Dec']))
-    #     self.assertFalse(custom_equality(self.notes, self.notes[::-1]))
-    #     self.assertFalse(custom_equality(self.multiples, [0, 3, 6, 9, 12, 15, 18,
-    #                                                      21, 24]))
+        self.assertFalse(custom_equality(self.months, ['Jan', 'Feb', 'Mar', 'Apr',
+                                                      'May', 'Jun', 'Aug', 'Sep',
+                                                       'Oct', 'Nov', 'Dec']))
+        self.assertFalse(custom_equality(self.notes, self.notes[::-1]))
+        self.assertFalse(custom_equality(self.multiples, [0, 3, 6, 9, 12, 15, 18,
+                                                         21, 24]))
 
 if __name__ == '__main__':
     unittest.main()

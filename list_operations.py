@@ -73,10 +73,13 @@ def replace_middle(input_list):
     """Replace all elements of the input list with the the values 42 and 37, in
     that order, except for the first two and last two elements.
     """
-
+    temp_end = input_list[-1] # protection for edge case that list is less than 6 items
+    temp_second_from_end = input_list[-2]
     input_list[2] = 42
     input_list[3] = 37
     del input_list[4:-2]
+    input_list[-2] = temp_second_from_end
+    input_list[-1] = temp_end
     return input_list
     # del input_list[2:-2]
     # input_list.insert(2,42)
@@ -134,10 +137,10 @@ def custom_append(input_list, value):
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    lenValues = custom_len(values)
-    for i in range(lenValues):
-        valueA = values[i]
-        custom_append(input_list,valueA)
+    len_values = custom_len(values)
+    for i in range(len_values):
+        new_value = values[i]
+        custom_append(input_list,new_value)
     return input_list
 
 def custom_insert(input_list, index, value):
@@ -183,27 +186,45 @@ def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
     lenList = custom_len(input_list)
     halfList = lenList/2
-    beginning = 0
-    end = lenList-1
+    left_index = 0
+    right_index = lenList-1
+
     for i in range(halfList):
-
-        temp = input_list[beginning]
-        input_list[beginning] = input_list[end]
-        input_list[end] = temp
-        beginning +=1
-        end -= 1
-
+        temp = input_list[left_index]
+        input_list[left_index] = input_list[right_index]
+        input_list[right_index] = temp
+        left_index +=1
+        right_index -= 1
 
     return input_list
 
-#custom_reverse(["Jan","Feb","March","April"])
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
-    pass
+    contains_count = custom_count(input_list, value)
+    if contains_count > 0:
+        return True
+    else:
+        return False
+        
 
 def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-    pass
+    equal = True
+    len_of_first_list = custom_len(some_list)
+    len_of_second_list = custom_len(another_list)
+    if len_of_first_list != len_of_second_list:
+        equal = False
+        return equal
+    else:
+        for i in range(len_of_first_list):
+            if some_list[i] != another_list[i]:
+                equal = False
+                break
+            else:
+                equal = True
+                continue
+        return equal
+
