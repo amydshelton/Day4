@@ -73,18 +73,9 @@ def replace_middle(input_list):
     """Replace all elements of the input list with the the values 42 and 37, in
     that order, except for the first two and last two elements.
     """
-    temp_end = input_list[-1] # protection for edge case that list is less than 6 items
-    temp_second_from_end = input_list[-2]
-    input_list[2] = 42
-    input_list[3] = 37
-    del input_list[4:-2]
-    input_list[-2] = temp_second_from_end
-    input_list[-1] = temp_end
+
+    input_list[2:-2] = [42, 37]
     return input_list
-    # del input_list[2:-2]
-    # input_list.insert(2,42)
-    # input_list.insert(3,37)
-    # return input_list
 
 
 def delete_third_and_seventh(input_list):
